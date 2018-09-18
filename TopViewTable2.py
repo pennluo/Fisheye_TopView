@@ -246,14 +246,12 @@ out_put_img_l1 = remap_four(weights_l1, out_put_pxiels_l1, in_put_pxiels_l1)
 bird = Image.fromarray(out_put_img_l1)
 bird.show()
 
-
 weights_r1, out_put_pxiels_r1, in_put_pxiels_r1 = get_cross_trans_four1(frame_r, H_r, r_min_u, r_max_u, r_min_v,
                                                                         r_max_v, length1, length2, line_fr, line_br,
                                                                         centerr, centerf, centerb, 3, 1)
 out_put_img_r1 = remap_four(weights_r1, out_put_pxiels_r1, in_put_pxiels_r1)
 bird = Image.fromarray(out_put_img_r1)
 bird.show()
-
 
 weights = weights_f1 + weights_l1 + weights_b1 + weights_r1
 in_put_pxiels = in_put_pxiels_f1 + in_put_pxiels_l1 + in_put_pxiels_b1 + in_put_pxiels_r1
@@ -265,7 +263,6 @@ out_put_pxiels = out_put_pxiels_f1 + out_put_pxiels_l1 + out_put_pxiels_b1 + out
 out_put_img_1 = out_put_img_l1 + out_put_img_f1 + out_put_img_r1 + out_put_img_b1
 bird = Image.fromarray(out_put_img_1)
 bird.show()
-
 
 import time
 
@@ -308,7 +305,6 @@ def get_cross_trans_four2(frame, H, min_u, max_u, min_v, max_v, length1, length2
             in_put_pxiel = (frame_x, frame_y)
             in_put_pxiels.append(in_put_pxiel)
     return weights, out_put_pxiels, in_put_pxiels
-
 
 
 range1 = line_fr[0] * (719) + line_fr[1]
